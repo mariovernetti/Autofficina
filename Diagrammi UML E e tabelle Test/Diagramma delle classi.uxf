@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>30</y>
+      <w>342</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>Autofficina
+--
+-head: Nodo
+-elementi: Int
+--
++Autofficina()
+Autofficina(in x: Autofficina)
++getElementi(): Int	
+-creaNodo(in manutenzione: Manutenzione, in link: Nodo): Nodo
++getLinkPosizione(in posizione: Int): Nodo
++registraManutenzioneInTesta(in manutenzione: Manutenzione)
++registraManutenzioneInCoda(in manutenzione: Manutenzione)
++registraManutenzioneInPosizione(in posizione:Int, in manutenzione Manutenzione)
++eliminaInTesta()
++eliminaInCoda()
++eliminaInPosizione(in posizione: Int)
++eliminaManutenzione(in matricola: String)
++getManutenzione(in posizione: Int): Manutenzione
++stampaRapporto(in nomeFile: String, in manutenzione: Manutenzione)
++prossimaManutenzione(in manutenzione: Manutenzione): LocalDate
++salvaAutofficina(in nomeFile: String)
++caricaAutofficina(in nomeFile: String): Autofficina
++visualizzaManutenzioniMacchina(in matricola: String): String	
++visualizzaProssimeManutenzioni(in matricola: String): String	7
++visualizzaManutenzioniGiorno(in data: LocalDate): String
++visualizzaProssimeManutenzioniProgrammate(): String
++visualizzaTutteManutenzioni(): String
++convertiListaArray(): Manutenzione[]
++toString(): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>342</y>
+      <w>126</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>Nodo
+--
+-info: Manutenzione
+-link: Nodo
+--
++Nodo(in manutenzione: Manutenzione)
++getLink(): Nodo
++setLink( in link: Nodo)
++getInfo(): Manutenzione
++setInfo(in info: Manutenzione)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>324</x>
+      <y>30</y>
+      <w>222</w>
+      <h>264</h>
+    </coordinates>
+    <panel_attributes>Manutenzione
+--
+-codiceIdentificativo: Int
+-matricolaAutomezzo: String
+-descrizioneIntervento: String
+-dataManutenzione: LocalDate
+-prossimoIntervento: Int
+-nunmeroInterventiEseguiti: Int
+--
++Manutenzione(in matricolaAutomezzo: Int, 
+in descrizioneIntervento: String,
+in dataManutenzione: LocalDate,
+in prossimoIntervento: Int,
+in nunmeroInterventiEseguiti: Int
++Manutenzione(in manutenzione: Manutenzione)
++Manutenzione()
++getCodiceIdentificativo(): Int
++setCodiceIdentificativo(codiceIdentificativo: Int)
++getMatricolaAutomezzo(): String
++setMatricolaAutomezzo(in matricolaAutomezzo: String)
++getDescrizioneIntervento(): String
++setDescrizioneIntervento(in descrizioneIntervento: String)
++getDataManutenzione(): LocalDate
++setDataManutenzione(in dataManutenzione: LocalDate)
++getProssimoIntervento: String
++setProssimoIntervento(in prossimoIntervento: Int)
++toString(): String
++getProssimoInterventoData(): LocalDate</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>420</x>
+      <y>288</y>
+      <w>18</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1
+m1=1
+</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>294</y>
+      <w>108</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..1</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>402</y>
+      <w>78</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..1</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>360</y>
+      <w>78</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>540</x>
+      <y>360</y>
+      <w>18</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+</diagram>
